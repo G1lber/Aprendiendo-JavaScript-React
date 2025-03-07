@@ -1,0 +1,9 @@
+Creación de proyecto:
+Abrimos powerShell
+
+Debe estar en la ruta en donde se quiere crear el proyecto
+
+npm init vite@latest
+instalamos packeges de la nueva vercion de vite -> y
+create-vite@6.3.1 -> ok
+Damos le mombre del proyecto 

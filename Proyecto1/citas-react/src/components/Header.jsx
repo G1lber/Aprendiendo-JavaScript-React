@@ -1,11 +1,12 @@
 //Todos los componentes deben empezar con Mayuscula Header.jsx
 // Un componente es una funcion
 
-function Header(){
-
-    return(
-        <h1>Desde Header</h1>
-    )
+const Header = () => {
+  return (
+    <header>
+        <h1 className="">Desde Header</h1>
+    </header>
+  )
 }
 
 export default Header

@@ -30,8 +30,3 @@ tailwind.config.cjs
 postcss.config.js
 # Ignorar node_modules (por si no está ya)
 node_modules/
-
-# Ignorar archivos de configuración de Tailwind y PostCSS si no quieres versionarlos
-tailwind.config.js
-tailwind.config.cjs
-postcss.config.js

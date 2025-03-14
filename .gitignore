@@ -9,11 +9,7 @@ build/
 .vscode/
 .idea/
 
-# Ignorar archivos de configuración de Tailwind y PostCSS
-.tailwind/
-tailwind.config.js
-tailwind.config.cjs
-postcss.config.js
+
 
 # Logs
 logs

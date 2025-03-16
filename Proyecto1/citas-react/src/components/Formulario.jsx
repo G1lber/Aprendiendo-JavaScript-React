@@ -7,13 +7,59 @@ const Formulario = () => {
           Añade Paciente y {' '}
           <span className="text-indigo-600 font-bold">Administralos</span>
         </p>
-        <form className="bg-white shadow-md rounded-lg py-10 px-5">
-          <label className="block text-gray-700 uppercase font-bold">Nombre Macota</label>
+        <form className="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
+          <div className="mt-5">
+            <label htmlFor="mascota" className="block text-gray-700 uppercase font-bold">Nombre Macota</label>
 
+            <input 
+            id="mascota"
+            type="text" 
+            placeholder="Nombre de la Mascota"
+            className="border-2 w-full mt-2 placeholder-gray-400 rounded-md" 
+            />
+          </div>
+          <div className="mt-5">
+            <label htmlFor="propietario" className="block text-gray-700 uppercase font-bold">Nombre Propietario</label>
+
+            <input 
+            id="propietario"
+            type="text" 
+            placeholder="Nombre del Propietario"
+            className="border-2 w-full mt-2 placeholder-gray-400 rounded-md" 
+            />
+          </div>
+          <div className="mt-5">
+            <label htmlFor="email" className="block text-gray-700 uppercase font-bold">Email</label>
+
+            <input 
+            id="email"
+            type="text" 
+            placeholder="Email de Contacto Propietario"
+            className="border-2 w-full mt-2 placeholder-gray-400 rounded-md" 
+            />
+          </div>
+          <div className="mt-5">
+            <label htmlFor="alta" className="block text-gray-700 uppercase font-bold">Alta</label>
+
+            <input 
+            id="alta"
+            type="date" 
+            className="border-2 w-full mt-2 placeholder-gray-400 rounded-md" 
+            />
+          </div>
+          <div className="mt-5">
+            <label htmlFor="sintomas" className="block text-gray-700 uppercase font-bold">Síntomas</label>
+            <textarea 
+              id="sintomas"
+              className="border-2 w-full mt-2 placeholder-gray-400 rounded-md" 
+              placeholder="Describe los Síntomas"
+            />
+          </div>
+          
           <input 
-          type="text" 
-          placeholder="Nombre de la Mascota"
-          className="border-2 w-full mt-2 placeholder-gray-400 rounded-md" 
+            type="submit"
+            className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-colors mt-5 rounded-md"
+            value="Agregar Paciente"
           />
         </form>
     </div>

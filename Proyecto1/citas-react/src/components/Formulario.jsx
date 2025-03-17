@@ -1,13 +1,14 @@
 //rfce para mas rapido lo auto completa y hace la funcion
 //El estado de la aplicacion 'Una variable con informacion del aplicativo'
 import { useState , useEffect} from 'react';
+import Error from './Error';
 /* const [cliente, setCliente] = useState({});
    const [total setTotal] = useState(0);
    const [cliente, setCliente] = useState([]);
    const [modal, setModal] = useState(false);
    */
 
-const Formulario = () => {
+const Formulario = ({ pacientes, setPacientes}) => {
 
   const [nombre, setNombre] = useState('');
   const [propietario, setPropietario] = useState('');
@@ -16,6 +17,13 @@ const Formulario = () => {
   const [sintomas, setSintomas] = useState('');
   
   const [error , setError] = useState(false)
+
+  const generarId = () => {
+    const random = Math.random().toString(18).substring(2);
+    const fecha = Date.now().toString(17)
+
+    return random + fecha
+  }
 
   const handleSumit =(e)=>{
     e.preventDefault();
@@ -28,6 +36,26 @@ const Formulario = () => {
       return;
     }
     setError(false)
+
+    //objeto Paciente
+    const objetoPaciente = {
+      nombre, 
+      propietario, 
+      email, 
+      fecha, 
+      sintomas,
+      id: generarId()
+    }
+    // console.log(objetoPaciente)
+    setPacientes([...pacientes, objetoPaciente])
+
+    //Reiniciar el formulario
+
+    setNombre('')
+    setPropietario('')
+    setEmail('')
+    setFecha('')
+    setSintomas('')
   }
 
   return (
@@ -42,9 +70,9 @@ const Formulario = () => {
           className="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
           
           {error && 
-          <div className='bg-red-800 text-white text-center p-3 uppercase font-bold mb-2 rounded-md'>
-            <p>Todos los campos son obligatorios</p>
-          </div>
+            <Error>
+              <p>Todos los campos son obligatorios</p>
+              </Error> 
           }
           <div className="mt-5">
             <label htmlFor="mascota" className="block text-gray-700 uppercase font-bold">Nombre Macota</label>

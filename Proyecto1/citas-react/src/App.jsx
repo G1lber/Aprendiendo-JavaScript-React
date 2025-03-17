@@ -1,7 +1,13 @@
+import { useState } from "react"
 import Formulario from "./components/Formulario"
 import Header from "./components/Header"
 import ListadoPacientes from "./components/ListadoPacientes"
+
+//Props ->Propiedades - para pasar variables o funciones de otros componentes
+//Ejemplo - <Header nombreProp= {datos o Funciones}/>
+
 function App() {
+  const[pacientes , setPacientes]= useState([]);
   return (
     // Toda etiqueta debe tener un cierre 
     //Fragment <>, </>
@@ -9,8 +15,14 @@ function App() {
       <Header/>
 
       <div className="mt-12 md:flex">
-      <Formulario/>
-      <ListadoPacientes/>
+      <Formulario
+        pacientes={pacientes}
+        setPacientes={setPacientes}
+
+      />
+      <ListadoPacientes
+        pacientes={pacientes}
+      />
       </div>
     </div>
   )
